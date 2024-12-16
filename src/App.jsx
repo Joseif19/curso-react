@@ -6,6 +6,7 @@ import HeaderComponent from './components/HeaderComponent'
 import ButtonComponent from './components/ButtonComponent'
 import Login from './components/Login'
 import MovieList from './components/MovieList'
+import MemeList from './components/MemeList'
 
 function App() {
 
@@ -62,27 +63,7 @@ function App() {
     <HeaderComponent greetings={greetings} links={links}></HeaderComponent>
 
     <main className="main-content">
-    {user.username && <h2 onClick={sayHello}>Hola {user.username}</h2>}
-
-    <Login handleLogin={login}></Login>
-
-    <button onClick={() => setShowMovies(!showMovies)}>Toggle Movies</button>
-
-    {showMovies && <MovieList></MovieList>}
-
-    {condition ? (
-      <h2>La condición se cumple</h2>) : 
-      (<h2>La condición no se cumple</h2>
-    )}
-
-
-    <h2 onClick={addOne}>Number: {number}</h2>
-
-    <input value={myValue} placeholder={myPlaceHolder} type='text' onChange={handleChange}/>
-
-
-    <br/><br/>
-    <ButtonComponent></ButtonComponent>
+      <MemeList></MemeList>
     </main>
 
     

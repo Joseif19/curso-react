@@ -6,15 +6,7 @@ function MovieList() {
     return <p key={movie}>{index + 1} - {movie}</p>
   })
 
-  useEffect(() =>{
-    console.log("MovieList mounted.")
-  }, [])
-
-  useEffect(() =>{
-    return () =>{
-        console.log("MovieList unmounted.")
-    }
-  }, [])
+  
 
   return (
     <section>

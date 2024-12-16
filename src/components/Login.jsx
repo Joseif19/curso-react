@@ -1,18 +1,42 @@
 function Login(props) {
 
   const user = {
-    username: "José María",
-    email: "joseiglesias2004@gmail.com"
+    username: "",
+    email: ""
+  }
+
+  const setUsername = (e) =>{
+    user.username = e.target.value;
+  }
+
+  const setEmail = (e) =>{
+    user.email = e.target.value;
   }
 
   const handleClick = () =>{
     props.handleLogin(user);
   }
 
+  const handleSubmit = (e) =>{
+    e.preventDefault();
+    console.log(user);
+    props.handleLogin(user);
+  }
+
   return (
     <section>
         <h2>Login section</h2>
-        <button onClick={handleClick}>Login</button>
+        <form onSubmit={handleSubmit}>
+          <fieldset>
+            <label htmlFor="username">Username</label>
+          <input type="text" id="username" onChange={setUsername} />
+          </fieldset>
+          <fieldset>
+            <label htmlFor="email">Email</label>
+          <input type="text" id="email" onChange={setEmail} />
+          </fieldset>
+          <button>Login</button>
+        </form>
     </section>
   )
 }
